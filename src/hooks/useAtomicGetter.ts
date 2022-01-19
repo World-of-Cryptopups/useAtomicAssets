@@ -5,23 +5,19 @@ import FetchError from '../lib/error'
 import fetcher from '../lib/fetcher'
 import { FetchResult } from '../typings/fetch'
 
-interface useAtomicGetterProps<T extends Record<string, any>> {
-  url?: string
-  params?: T
-  endpoint?: string
-}
-
 /**
  * Custom request hook for sending request to custom atomicasset endpoints.
  *
- * @param param useAtomicGetterProps<T>
+ * @param url Atomicassets endpoint url.
+ * @param params Url params to request
+ * @param endpoint Atomicassets endpoint
  * @returns FetchResult<K>
  */
-const useAtomicGetter = <K, T extends Record<string, any>>({
-  url,
-  params,
-  endpoint
-}: useAtomicGetterProps<T>): FetchResult<K> => {
+const useAtomicGetter = <K, T extends Record<string, any>>(
+  url?: string,
+  params?: T,
+  endpoint?: string
+): FetchResult<K> => {
   const { endpoint: contextEndpoint } = useAtomicContext()
 
   endpoint = endpoint != null ? endpoint : contextEndpoint

@@ -1,3 +1,3 @@
-import HelloComponent from './component/simple'
+import UseAtomicAssetsProvider from './component/provider'
 
-export { HelloComponent }
+export { UseAtomicAssetsProvider }

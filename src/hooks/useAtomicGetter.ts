@@ -13,9 +13,12 @@ import { FetchResult } from '../typings/fetch'
  * @param endpoint Atomicassets endpoint
  * @returns FetchResult<K>
  */
-const useAtomicGetter = <K, T extends Record<string, any>>(
+const useAtomicGetter = <
+  K,
+  T extends Record<string, any> = Record<string, any>
+>(
   url?: string,
-  params?: T,
+  params?: T | null,
   endpoint?: string
 ): FetchResult<K> => {
   const { endpoint: contextEndpoint } = useAtomicContext()

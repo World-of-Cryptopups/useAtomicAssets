@@ -21,7 +21,7 @@ const fetcher = async <T extends Record<string, any> = Record<string, any>>(
     throw new FetchError(data.message, res.status)
   }
 
-  return data
+  return data.data
 }
 
 export default fetcher

@@ -1,11 +1,11 @@
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
-import typescript from 'rollup-plugin-typescript2'
+import resolve from '@rollup/plugin-node-resolve'
 import url from '@rollup/plugin-url'
 import analyze from 'rollup-plugin-analyzer'
 import json from 'rollup-plugin-json'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import sourceMaps from 'rollup-plugin-sourcemaps'
+import typescript from 'rollup-plugin-typescript2'
 
 const packageJson = require('./package.json')
 
@@ -29,7 +29,10 @@ export default {
       file: packageJson.unpkg,
       format: 'umd',
       globals: {
-        react: 'React'
+        react: 'React',
+        'cross-fetch': 'fetch',
+        'url-join': 'urljoin',
+        swr: 'useSWR'
       }
     }
   ],
@@ -50,5 +53,5 @@ export default {
     analyze(),
     sourceMaps()
   ],
-  external: ['react']
+  external: ['react', 'cross-fetch', 'swr', 'url-join']
 }

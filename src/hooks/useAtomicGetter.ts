@@ -5,22 +5,35 @@ import FetchError from '../lib/error'
 import fetcher from '../lib/fetcher'
 import { FetchResult } from '../typings/fetch'
 
+interface useAtomicGetterProps<T> {
+  /**
+   * Api url endpoint to send request.
+   */
+  uri: string
+  /**
+   * Request params.
+   */
+  params?: T
+  /**
+   * Atomicassets api endpoint.
+   */
+  endpoint?: string
+}
+
 /**
  * Custom request hook for sending request to custom atomicasset endpoints.
  *
- * @param url Atomicassets endpoint url.
- * @param params Url params to request
- * @param endpoint Atomicassets endpoint
+ * @param props Request props.
  * @returns FetchResult<K>
  */
 const useAtomicGetter = <
   K,
   T extends Record<string, any> = Record<string, any>
 >(
-  url?: string,
-  params?: T | null,
-  endpoint?: string
+  props?: useAtomicGetterProps<T> | null
 ): FetchResult<K> => {
+  let { uri, params, endpoint } = props ?? { uri: '' }
+
   const { endpoint: contextEndpoint } = useAtomicContext()
 
   endpoint = endpoint != null ? endpoint : contextEndpoint
@@ -29,7 +42,7 @@ const useAtomicGetter = <
   }
 
   const { data, error } = useSWR<K, FetchError>(
-    url != null ? [urljoin(endpoint, url), params] : null,
+    props != null ? [urljoin(endpoint, uri), params] : null,
     fetcher
   )
 

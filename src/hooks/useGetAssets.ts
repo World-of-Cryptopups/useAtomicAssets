@@ -53,9 +53,13 @@ const useGetAssets = (
   }
 
   return useAtomicGetter<IAsset[]>(
-    props != null ? '/v1/assets' : undefined,
-    { ...props, ...dOptions },
-    endpoint
+    props != null
+      ? {
+          uri: '/v1/assets',
+          params: { ...props, ...dOptions },
+          endpoint
+        }
+      : null
   )
 }
 

@@ -1,3 +1,4 @@
 import useAtomicGetter from './useAtomicGetter'
+import useGetAssets from './useGetAssets'
 
-export { useAtomicGetter }
+export { useAtomicGetter, useGetAssets }

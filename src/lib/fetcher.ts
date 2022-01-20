@@ -1,7 +1,7 @@
-import urljoin from 'url-join'
-import parseParams from './params'
 import fetch from 'cross-fetch'
+import urljoin from 'url-join'
 import FetchError from './error'
+import parseParams from './params'
 
 const fetcher = async <T extends Record<string, any> = Record<string, any>>(
   url: string,
@@ -10,7 +10,7 @@ const fetcher = async <T extends Record<string, any> = Record<string, any>>(
   let finalUrl = url
 
   if (params != null) {
-    finalUrl = urljoin(url, '?', parseParams(params))
+    finalUrl = urljoin(url, '?' + parseParams(params))
   }
 
   const res = await fetch(finalUrl, { method: 'GET' })

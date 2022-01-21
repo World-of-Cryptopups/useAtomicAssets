@@ -10,7 +10,7 @@ const fetcher = async <T extends Record<string, any> = Record<string, any>>(
   let finalUrl = url
 
   if (params != null) {
-    finalUrl = urljoin(url, '?' + parseParams(params))
+    finalUrl = urljoin(url, params != null ? '?' + parseParams(params) : '')
   }
 
   const res = await fetch(finalUrl, { method: 'GET' })

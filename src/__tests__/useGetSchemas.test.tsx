@@ -1,12 +1,11 @@
 import { renderHook } from '@testing-library/react-hooks'
-import useGetCollections from '../hooks/useGetCollections'
+import useGetSchemas from '../hooks/useGetSchemas'
 import CustomWrapper from './wrapper'
 
 describe('useGetSchemas', () => {
   it('should fetch schemas', async () => {
     const { result, waitForNextUpdate } = renderHook(
-      () =>
-        useGetCollections({ limit: 3 }, 'https://test.wax.api.atomicassets.io'),
+      () => useGetSchemas({ limit: 3 }, 'https://test.wax.api.atomicassets.io'),
       { wrapper: CustomWrapper }
     )
 

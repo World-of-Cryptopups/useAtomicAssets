@@ -3,21 +3,21 @@ import { FetchResult } from '../typings/fetch'
 import useAtomicGetter from './useAtomicGetter'
 
 interface useGetSchemasProps {
-  collection_name: string
-  authorized_account: string
-  schema_name: string
-  match: string
-  collection_blacklist: string
-  collection_whitelist: string
-  ids: string
-  lower_bound: string
-  upper_bound: string
-  before: number
-  after: number
-  page: number
-  limit: number
-  order: 'asc' | 'desc'
-  sort: 'created' | 'schema_name'
+  collection_name?: string
+  authorized_account?: string
+  schema_name?: string
+  match?: string
+  collection_blacklist?: string
+  collection_whitelist?: string
+  ids?: string
+  lower_bound?: string
+  upper_bound?: string
+  before?: number
+  after?: number
+  page?: number
+  limit?: number
+  order?: 'asc' | 'desc'
+  sort?: 'created' | 'schema_name'
 }
 
 /**

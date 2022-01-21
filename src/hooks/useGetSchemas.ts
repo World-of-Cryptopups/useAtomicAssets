@@ -1,22 +1,22 @@
-import { ISchema } from '../typings/atomicassets-js'
+import {
+  DateBoundaryParams,
+  GreylistParams,
+  ISchema,
+  PrimaryBoundaryParams
+} from '../typings/atomicassets-js'
 import { FetchResult } from '../typings/fetch'
+import { PageLimitOrderParams } from '../typings/params'
 import useAtomicGetter from './useAtomicGetter'
 
-interface useGetSchemasProps {
+interface useGetSchemasProps
+  extends GreylistParams,
+    PrimaryBoundaryParams,
+    DateBoundaryParams,
+    PageLimitOrderParams {
   collection_name?: string
   authorized_account?: string
   schema_name?: string
   match?: string
-  collection_blacklist?: string
-  collection_whitelist?: string
-  ids?: string
-  lower_bound?: string
-  upper_bound?: string
-  before?: number
-  after?: number
-  page?: number
-  limit?: number
-  order?: 'asc' | 'desc'
   sort?: 'created' | 'schema_name'
 }
 

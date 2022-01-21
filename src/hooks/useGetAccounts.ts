@@ -1,21 +1,22 @@
+import {
+  GreylistParams,
+  HideOffersParams,
+  PrimaryBoundaryParams
+} from '../typings/atomicassets-js'
 import { IAccountsProps } from '../typings/custom'
 import { FetchResult } from '../typings/fetch'
+import { PageLimitOrderParams } from '../typings/params'
 import useAtomicGetter from './useAtomicGetter'
 
-interface useGetAccountsProps {
+interface useGetAccountsProps
+  extends GreylistParams,
+    HideOffersParams,
+    PrimaryBoundaryParams,
+    PageLimitOrderParams {
   match?: string
   collection_name?: string
   schema_name?: string
   template_id?: string
-  hide_offers?: boolean
-  collection_blacklist?: string
-  collection_whitelist?: string
-  ids?: string
-  lower_bound?: string
-  upper_bound?: string
-  page?: number
-  limit?: number
-  order?: 'asc' | 'desc'
 }
 
 /**

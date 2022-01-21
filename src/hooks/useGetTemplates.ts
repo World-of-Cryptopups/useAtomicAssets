@@ -1,7 +1,21 @@
-import { ITemplate } from '../typings/atomicassets-js'
+import {
+  DateBoundaryParams,
+  GreylistParams,
+  ITemplate,
+  PrimaryBoundaryParams
+} from '../typings/atomicassets-js'
+import {
+  BurnableTransferableParams,
+  PageLimitOrderParams
+} from '../typings/params'
 import useAtomicGetter from './useAtomicGetter'
 
-interface useGetTemplatesProps {
+interface useGetTemplatesProps
+  extends GreylistParams,
+    PrimaryBoundaryParams,
+    DateBoundaryParams,
+    PageLimitOrderParams,
+    BurnableTransferableParams {
   collection_name?: string
   schema_name?: string
   issued_supply?: number
@@ -9,20 +23,8 @@ interface useGetTemplatesProps {
   max_issued_supply?: number
   has_assets?: boolean
   max_supply?: number
-  is_burnable?: boolean
-  is_transferable?: boolean
   authorized_account?: string
   match?: string
-  collection_whitelist?: string
-  collection_blacklist?: string
-  ids?: string
-  lower_bound?: string
-  upper_bound?: string
-  before?: number
-  after?: number
-  page?: number
-  limit?: number
-  order?: 'asc' | 'desc'
   sort?: 'name' | 'created'
 }
 

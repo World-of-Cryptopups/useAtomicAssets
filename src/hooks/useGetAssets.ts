@@ -1,37 +1,47 @@
 import { buildDataOptions } from '../lib/data'
-import { DataOptions, IAsset } from '../typings/atomicassets-js'
+import {
+  DataOptions,
+  DateBoundaryParams,
+  GreylistParams,
+  HideOffersParams,
+  IAsset,
+  PrimaryBoundaryParams
+} from '../typings/atomicassets-js'
 import { FetchResult } from '../typings/fetch'
+import {
+  BurnableTransferableParams,
+  PageLimitOrderParams
+} from '../typings/params'
 import useAtomicGetter from './useAtomicGetter'
 
-interface useGetAssetsProps {
+interface useGetAssetsProps
+  extends GreylistParams,
+    HideOffersParams,
+    DateBoundaryParams,
+    PrimaryBoundaryParams,
+    PageLimitOrderParams,
+    BurnableTransferableParams {
   collection_name?: string
   schema_name?: string
   template_id?: string
-  is_transferable?: boolean
-  is_burnable?: boolean
   burned?: boolean
   owner?: string
   match?: string
   match_immutable_name?: string
   match_mutable_name?: string
-  collection_blacklist?: string
-  collection_whitelist?: string
   only_duplicate_templates?: boolean
   has_backed_tokens?: boolean
   authorized_account?: string
   template_whitelist?: string
   template_blacklist?: string
   hide_template_by_accounts?: string
-  hide_offers?: string
-  ids?: string
-  lower_bound?: string
-  upper_bound?: string
-  before?: number
-  after?: number
-  page?: number
-  limit?: number
-  order?: string
-  sort?: string
+  sort?:
+    | 'asset_id'
+    | 'minted'
+    | 'updated'
+    | 'transferred'
+    | 'template_mint'
+    | 'name'
 }
 
 /**

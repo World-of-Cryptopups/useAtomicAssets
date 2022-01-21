@@ -1,12 +1,12 @@
-import { IAccountStats } from '../typings/atomicassets-js'
+import {
+  GreylistParams,
+  HideOffersParams,
+  IAccountStats
+} from '../typings/atomicassets-js'
 import { FetchResult } from '../typings/fetch'
 import useAtomicGetter from './useAtomicGetter'
 
-interface useGetAccountProps {
-  hide_offers: boolean
-  collection_blacklist: string
-  collection_whitelist: string
-}
+interface useGetAccountProps extends GreylistParams, HideOffersParams {}
 
 /**
  * Get a specific account stats.

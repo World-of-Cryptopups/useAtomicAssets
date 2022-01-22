@@ -5,6 +5,7 @@ import useGetAssetID from './useGetAssetID'
 import useGetAssets from './useGetAssets'
 import useGetCollectionName from './useGetCollectionName'
 import useGetCollections from './useGetCollections'
+import useGetSchemaName from './useGetSchemaName'
 import useGetSchemas from './useGetSchemas'
 import useGetTemplates from './useGetTemplates'
 import useMarketGetSales from './useMarketGetSales'
@@ -19,5 +20,6 @@ export {
   useGetSchemas,
   useGetTemplates,
   useMarketGetSales,
-  useGetCollectionName
+  useGetCollectionName,
+  useGetSchemaName
 }

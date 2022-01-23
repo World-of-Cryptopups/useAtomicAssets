@@ -105,6 +105,8 @@ export default function App() {
 
 ### Hooks
 
+The following are currently implemented hooks and their corresponding api endpoints.
+
 - **useGetAccount** - `/atomicassets/v1/accounts/{accountName}`
 - **useGetAccounts** - `/atomicassets/v1/accounts`
 - **useGetAssets** - `/atomicassets/v1/assets`
@@ -114,6 +116,7 @@ export default function App() {
 - **useGetSchemas** - `/atomicassets/v1/schemas`
 - **useGetSchemaName** - `/atomicassets/v1/schemas/{collectionName}/{schemaName}`
 - **useGetTemplates** - `/atomicassets/v1/templates`
+- **useGetTemplateID** - `/atomicassets/v1/templates/{collectionName}/{templateId}`
 - **useMarketGetSales** - `/atomicmarket/v1/sales`
 
 #### Custom request usage

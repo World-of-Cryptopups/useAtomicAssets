@@ -11,6 +11,8 @@ interface useGetAccountProps extends GreylistParams, HideOffersParams {}
 /**
  * Get a specific account stats.
  *
+ * `/atomicassets/v1/accounts/{accountName}`
+ *
  * @param account Account name.
  * @param props Query options.
  * @param endpoint Atomicassets endpoint.

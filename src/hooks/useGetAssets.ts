@@ -47,6 +47,8 @@ interface useGetAssetsProps
 /**
  *  Fetch assets.
  *
+ * `/atomicassets/v1/assets`
+ *
  * @param props Query options
  * @param data Custom query options for asset / template data fields.
  * @param endpoint Atomicassets endpoint.

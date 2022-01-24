@@ -5,6 +5,8 @@ import useAtomicGetter from './useAtomicGetter'
 /**
  * Fetch asset by id.
  *
+ * `/atomicassets/v1/assets/{assetId}`
+ *
  * @param assetId ID of asset
  * @param endpoint Atomicassets endpoint.
  * @returns FetchResult<IAsset>

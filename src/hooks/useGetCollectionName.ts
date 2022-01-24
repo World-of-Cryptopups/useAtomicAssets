@@ -4,6 +4,8 @@ import { ICollection } from '../typings/atomicassets-js'
 /**
  * Find collection by its name.
  *
+ * `/atomicassets/v1/collection/{collectionName}`
+ *
  * @param collectionName Name of collection.
  * @param endpoint Atomicassets endpoint.
  * @returns FetchResult<ICollection>

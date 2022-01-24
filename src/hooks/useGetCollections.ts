@@ -23,6 +23,8 @@ interface useGetCollectionsProps
 /**
  * Fetch collections.
  *
+ * `/atomicassets/v1/collections`
+ *
  * @param props Query options.
  * @param endpoint Atomicassets endpoint.
  * @returns FetchResult<ICollection[]>

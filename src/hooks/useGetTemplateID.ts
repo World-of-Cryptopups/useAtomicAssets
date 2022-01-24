@@ -16,6 +16,8 @@ interface useGetTemplateIDProps {
 /**
  * Find template by id.
  *
+ * `/atomicassets/v1/templates/{collectionName}/{templateID}`
+ *
  * @param props Path params.
  * @param endpoint Atomicassets endpoint.
  * @returns FetchResult<ITemplate>

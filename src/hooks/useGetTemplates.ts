@@ -31,6 +31,8 @@ interface useGetTemplatesProps
 /**
  * Fetch templates.
  *
+ * `/atomicassets/v1/templates`
+ *
  * @param props Query options.
  * @param endpoint Atomicassets endpoint.
  * @returns FetchResult<ITemplate[]>

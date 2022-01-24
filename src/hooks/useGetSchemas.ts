@@ -23,7 +23,9 @@ interface useGetSchemasProps
 /**
  * Fetch schemas.
  *
- * @param props Queryr options
+ * `/atomicassets/v1/schemas`
+ *
+ * @param props Query options
  * @param endpoint Atomicassets endpoint.
  * @returns FetchResult<ISchema[]>
  */

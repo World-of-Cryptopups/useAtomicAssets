@@ -50,6 +50,8 @@ interface useMarketGetSalesProps
 /**
  * Get market sales.
  *
+ * `/atomicmarket/v1/sales`
+ *
  * @param props Query options.
  * @param dataOptions Custom query options for asset / template data fields.
  * @param endpoint Atomicassets endpoint.

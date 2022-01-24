@@ -16,6 +16,8 @@ interface useGetSchemaNameProps {
 /**
  * Find schema by its name.
  *
+ * `/atomicassets/v1/schemas/{collectionName}/{schemaName}`
+ *
  * @param props Path params.
  * @param endpoint Atomicassets endpoint.
  * @returns FetchResult<ISchema>

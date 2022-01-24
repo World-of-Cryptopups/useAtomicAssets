@@ -22,6 +22,8 @@ interface useGetAccountsProps
 /**
  * Get accounts which own atomicassets NFTs.
  *
+ * `/atomicassets/v1/accounts`
+ *
  * @param props Query options.
  * @param endpoint Atomicassets endpoint.
  * @returns FechResult<IAccountsProps>

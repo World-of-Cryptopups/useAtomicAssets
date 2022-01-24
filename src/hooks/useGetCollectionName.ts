@@ -1,5 +1,5 @@
-import { useAtomicGetter } from '.'
 import { ICollection } from '../typings/atomicassets-js'
+import useAtomicGetter from './useAtomicGetter'
 
 /**
  * Find collection by its name.

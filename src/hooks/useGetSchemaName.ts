@@ -1,6 +1,6 @@
-import { useAtomicGetter } from '.'
 import { ISchema } from '../typings/atomicassets-js'
 import { FetchResult } from '../typings/fetch'
+import useAtomicGetter from './useAtomicGetter'
 
 interface useGetSchemaNameProps {
   /**

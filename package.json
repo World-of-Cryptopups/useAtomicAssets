@@ -1,6 +1,6 @@
 {
   "name": "@cryptopuppie/useatomicassets",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "React hooks for fetching data from atomicassets.",
   "main": "./dist/index.js",
   "module": "./dist/index.modern.js",
@@ -25,9 +25,27 @@
     "prepublishOnly": "npm run build",
     "build": "cross-env NODE_ENV=production && rm -rf dist && rollup -c"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "atomicassets",
+    "atomicassets fetcher",
+    "atomic hooks fetcher",
+    "react hooks atomicassets",
+    "react hooks",
+    "swr hook"
+  ],
+  "author": {
+    "name": "World of Cryptopups Members",
+    "email": "iamcoderx@gmail.com",
+    "url": "https://www.worldofcryptopups.cf/"
+  },
+  "contributors": [
+    {
+      "name": "Joshue Abance",
+      "email": "iamcoderx@gmail.com",
+      "url": "https://github.com/TheBoringDude"
+    }
+  ],
+  "license": "MIT",
   "dependencies": {
     "cross-fetch": "^3.1.5",
     "react": "^17.0.2",

@@ -1,6 +1,6 @@
 {
   "name": "@cryptopuppie/useatomicassets",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React hooks for fetching data from atomicassets.",
   "main": "./dist/index.js",
   "exports": "./dist/index.js",
@@ -8,15 +8,13 @@
   "type": "module",
   "repository": "World-of-Cryptopups/useAtomicAssets",
   "scripts": {
-    "test": "jest",
-    "test:ci": "jest --ci --coverage --silent",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepare": "husky install",
     "precommit": "lint-staged",
     "prepack": "pnpm build",
     "prepublishOnly": "pnpm build",
-    "build": "tsc"
+    "build": "rm -r -f dist && tsup"
   },
   "keywords": [
     "atomicassets",
@@ -39,6 +37,20 @@
     }
   ],
   "license": "MIT",
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "dts": {
+      "resolve": true
+    },
+    "splitting": true,
+    "clean": true
+  },
   "dependencies": {
     "cross-fetch": "^3.1.5",
     "react": "^18.2.0",
@@ -75,6 +87,10 @@
     "rollup-plugin-typescript2": "^0.32.1",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.0",
+    "tsup": "^6.1.3",
     "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }

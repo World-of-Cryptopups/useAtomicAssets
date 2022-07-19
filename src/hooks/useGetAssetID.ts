@@ -1,3 +1,4 @@
+import { QueryOptions } from '../lib/fetcher'
 import { IAsset } from '../typings/atomicassets-js'
 import { FetchResult } from '../typings/fetch'
 import useAtomicGetter from './useAtomicGetter'
@@ -8,18 +9,21 @@ import useAtomicGetter from './useAtomicGetter'
  * `/atomicassets/v1/assets/{assetId}`
  *
  * @param assetId ID of asset
- * @param endpoint Atomicassets endpoint.
+ * @param options Set custom fetch options.
  * @returns FetchResult<IAsset>
  */
-const useGetAssetID = (
+const useGetAssetID = <T = Record<string, any>>(
   assetId?: string | null,
-  endpoint?: string
+  options?: QueryOptions<T>
 ): FetchResult<IAsset> => {
+  const { endpoint, initialData } = options ?? {}
+
   return useAtomicGetter<IAsset>(
     assetId != null
       ? {
           uri: `/atomciassets/v1/assets/${assetId}`,
-          endpoint
+          endpoint,
+          initialData
         }
       : null
   )

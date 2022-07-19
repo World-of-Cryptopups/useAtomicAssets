@@ -1,4 +1,5 @@
 import { buildDataOptions } from '../lib/data'
+import { QueryOptions } from '../lib/fetcher'
 import {
   DataOptions,
   DateBoundaryParams,
@@ -54,14 +55,16 @@ interface useMarketGetSalesProps
  *
  * @param props Query options.
  * @param dataOptions Custom query options for asset / template data fields.
- * @param endpoint Atomicassets endpoint.
+ * @param options Set custom fetch options.
  * @returns FetchResult<ISales[]>
  */
-const useMarketGetSales = (
+const useMarketGetSales = <T = Record<string, any>>(
   props?: useMarketGetSalesProps | null,
   dataOptions?: DataOptions,
-  endpoint?: string
+  options?: QueryOptions<T>
 ): FetchResult<ISales[]> => {
+  const { endpoint, initialData } = options ?? {}
+
   let dOptions: Record<string, any> = {}
   if (dataOptions != null) {
     dOptions = buildDataOptions(dataOptions)
@@ -72,7 +75,8 @@ const useMarketGetSales = (
       ? {
           uri: '/atomicmarket/v1/sales',
           params: { ...props, ...dOptions },
-          endpoint
+          endpoint,
+          initialData
         }
       : null
   )

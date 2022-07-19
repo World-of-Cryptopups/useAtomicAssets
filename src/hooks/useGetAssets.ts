@@ -1,4 +1,5 @@
 import { buildDataOptions } from '../lib/data'
+import { QueryOptions } from '../lib/fetcher'
 import {
   DataOptions,
   DateBoundaryParams,
@@ -50,15 +51,17 @@ interface useGetAssetsProps
  * `/atomicassets/v1/assets`
  *
  * @param props Query options
- * @param data Custom query options for asset / template data fields.
- * @param endpoint Atomicassets endpoint.
+ * @param dataOptions Custom query options for asset / template data fields.
+ * @param options Set custom fetch options.
  * @returns FetchResult<IAsset[]>
  */
-const useGetAssets = (
+const useGetAssets = <T = Record<string, any>>(
   props?: useGetAssetsProps | null,
   dataOptions?: DataOptions,
-  endpoint?: string
+  options?: QueryOptions<T>
 ): FetchResult<IAsset[]> => {
+  const { endpoint, initialData } = options ?? {}
+
   let dOptions: Record<string, any> = {}
   if (dataOptions != null) {
     dOptions = buildDataOptions(dataOptions)
@@ -69,7 +72,8 @@ const useGetAssets = (
       ? {
           uri: '/atomicassets/v1/assets',
           params: { ...props, ...dOptions },
-          endpoint
+          endpoint,
+          initialData
         }
       : null
   )

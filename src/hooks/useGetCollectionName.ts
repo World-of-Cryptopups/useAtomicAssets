@@ -1,3 +1,4 @@
+import { QueryOptions } from '../lib/fetcher'
 import { ICollection } from '../typings/atomicassets-js'
 import useAtomicGetter from './useAtomicGetter'
 
@@ -7,16 +8,22 @@ import useAtomicGetter from './useAtomicGetter'
  * `/atomicassets/v1/collection/{collectionName}`
  *
  * @param collectionName Name of collection.
- * @param endpoint Atomicassets endpoint.
+ * @param options Set custom fetch options.
  * @returns FetchResult<ICollection>
  */
-const useGetCollectionName = (
+const useGetCollectionName = <T = Record<string, any>>(
   collectionName?: string | null,
-  endpoint?: string
+  options?: QueryOptions<T>
 ) => {
+  const { endpoint, initialData } = options ?? {}
+
   return useAtomicGetter<ICollection>(
     collectionName != null
-      ? { uri: `/atomicassets/v1/collections/${collectionName}`, endpoint }
+      ? {
+          uri: `/atomicassets/v1/collections/${collectionName}`,
+          endpoint,
+          initialData
+        }
       : null
   )
 }

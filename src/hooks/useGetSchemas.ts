@@ -1,3 +1,4 @@
+import { QueryOptions } from '../lib/fetcher'
 import {
   DateBoundaryParams,
   GreylistParams,
@@ -26,16 +27,23 @@ interface useGetSchemasProps
  * `/atomicassets/v1/schemas`
  *
  * @param props Query options
- * @param endpoint Atomicassets endpoint.
+ * @param options Set custom fetch options.
  * @returns FetchResult<ISchema[]>
  */
-const useGetSchemas = (
+const useGetSchemas = <T = Record<string, any>>(
   props?: useGetSchemasProps | null,
-  endpoint?: string
+  options?: QueryOptions<T>
 ): FetchResult<ISchema[]> => {
+  const { endpoint, initialData } = options ?? {}
+
   return useAtomicGetter<ISchema[]>(
     props != null
-      ? { uri: '/atomicassets/v1/schemas', params: props, endpoint }
+      ? {
+          uri: '/atomicassets/v1/schemas',
+          params: props,
+          endpoint,
+          initialData
+        }
       : null
   )
 }

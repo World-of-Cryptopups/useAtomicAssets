@@ -3,6 +3,7 @@ name: CI
 on:
   push:
     branches: [main]
+          npm test
   pull_request:
     branches: [main]
 
@@ -20,8 +21,7 @@ jobs:
         run: npm ci
       - name: Build
         run: |
-          npm run build
-      - name: Test
+          npm run build '@babel/preset-typescript',
+      - name: Lint
         run: |
           npm run lint
-          npm test

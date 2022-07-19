@@ -5,7 +5,7 @@ import FetchError from '../lib/error'
 import fetcher from '../lib/fetcher'
 import { FetchResult } from '../typings/fetch'
 
-interface useAtomicGetterProps<T> {
+interface useAtomicGetterProps<T, K = Record<string, any>> {
   /**
    * Api url endpoint to send request.
    */
@@ -18,6 +18,10 @@ interface useAtomicGetterProps<T> {
    * Atomicassets api endpoint.
    */
   endpoint?: string
+  /**
+   * Set initial data, used when using SSR or SSG rendering with Next
+   */
+  initialData?: K
 }
 
 /**
@@ -36,10 +40,7 @@ const useAtomicGetter = <
 
   const { endpoint: contextEndpoint } = useAtomicContext()
 
-  endpoint = endpoint != null ? endpoint : contextEndpoint
-  if (endpoint == null || endpoint === '') {
-    throw new Error('No AtomicAssets endpoint set!')
-  }
+  endpoint = (endpoint != null ? endpoint : contextEndpoint) ?? ''
 
   const { data, error } = useSWR<K, FetchError>(
     props != null ? [urljoin(endpoint, uri), params] : null,

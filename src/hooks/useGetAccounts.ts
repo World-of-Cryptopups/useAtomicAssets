@@ -1,3 +1,4 @@
+import { QueryOptions } from '../lib/fetcher'
 import {
   GreylistParams,
   HideOffersParams,
@@ -24,17 +25,24 @@ interface useGetAccountsProps
  *
  * `/atomicassets/v1/accounts`
  *
- * @param props Query options.
- * @param endpoint Atomicassets endpoint.
+ * @param props Query props.
+ * @param options Set custom fetch options.
  * @returns FechResult<IAccountsProps>
  */
-const useGetAccounts = (
+const useGetAccounts = <T = Record<string, any>>(
   props?: useGetAccountsProps | null,
-  endpoint?: string
+  options?: QueryOptions<T>
 ): FetchResult<IAccountsProps[]> => {
+  const { endpoint, initialData } = options ?? {}
+
   return useAtomicGetter<IAccountsProps[]>(
     props != null
-      ? { uri: '/atomicassets/v1/accounts', params: props, endpoint }
+      ? {
+          uri: '/atomicassets/v1/accounts',
+          params: props,
+          endpoint,
+          initialData
+        }
       : null
   )
 }

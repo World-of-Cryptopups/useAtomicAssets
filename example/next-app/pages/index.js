@@ -4,9 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  // const { data } = useGetCollectionName('alien.worlds', {
-  //   endpoint: 'https://wax.api.atomicassets.io'
-  // })
+  const { data } = useGetCollectionName('alien.worlds')
 
   return (
     <div className={styles.container}>
@@ -16,12 +14,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <p>{JSON.stringify(data)}</p> */}
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <p>data: {JSON.stringify(data)}</p>
 
         <p className={styles.description}>
           Get started by editing{' '}

@@ -1,6 +1,6 @@
 {
   "name": "@cryptopuppie/useatomicassets",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "React hooks for fetching data from atomicassets.",
   "main": "./dist/index.js",
   "exports": "./dist/index.js",
@@ -49,7 +49,17 @@
       "resolve": true
     },
     "splitting": true,
-    "clean": true
+    "clean": true,
+    "inject": [
+      "./react_shim.js"
+    ],
+    "external": [
+      "react",
+      "react-dom",
+      "cross-fetch",
+      "swr",
+      "url-join"
+    ]
   },
   "dependencies": {
     "cross-fetch": "^3.1.5",

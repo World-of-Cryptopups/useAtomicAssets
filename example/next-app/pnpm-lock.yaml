@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@cryptopuppie/useatomicassets': ^0.1.1
+  '@cryptopuppie/useatomicassets': ^0.1.2
   eslint: 8.20.0
   eslint-config-next: 12.2.2
   next: 12.2.2
@@ -9,7 +9,7 @@ specifiers:
   react-dom: 18.2.0
 
 dependencies:
-  '@cryptopuppie/useatomicassets': 0.1.1
+  '@cryptopuppie/useatomicassets': 0.1.2
   next: 12.2.2_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -35,8 +35,9 @@ packages:
       regenerator-runtime: 0.13.9
     dev: true
 
-  /@cryptopuppie/useatomicassets/0.1.1:
-    resolution: {integrity: sha512-XG6X+Pqlo5ZWUHmhfLl/k8J7eCDAomS/qLwVnEHeWl8IJNmnm9Y9EngwmgqwwU2MNbF154gxNHjNMrXIFP+PqA==}
+  /@cryptopuppie/useatomicassets/0.1.2:
+    resolution: {integrity: sha512-74G0na3uLYxeHHZyRB03bTonPw/Bmfu7ICP+A20+ieZN2IrqLZ3AKVV7J/AmUbVaooBf4Xv9vMXlbrYa2RLcJQ==}
+    engines: {node: '>=14'}
     dependencies:
       cross-fetch: 3.1.5
       react: 18.2.0

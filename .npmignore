@@ -5,6 +5,8 @@
 .huskyrc.json
 .lintstagedrc.json
 *.config.ts
+*config.js
+
 tsconfig.json
 
 *.tgz
@@ -13,3 +15,8 @@ tsconfig.json
 node_modules
 example
 src
+
+.husky 
+.github
+
+react_shim.js

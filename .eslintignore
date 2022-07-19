@@ -7,3 +7,6 @@ node_modules
 coverage
 dist
 example
+
+# ignore
+react_shim.js

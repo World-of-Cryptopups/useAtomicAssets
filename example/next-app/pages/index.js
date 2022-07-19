@@ -4,7 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const { data } = useGetCollectionName('alien.worlds')
+  const data = useGetCollectionName('alien.worlds')
 
   return (
     <div className={styles.container}>

@@ -42,6 +42,8 @@ const useAtomicGetter = <
 
   endpoint = (endpoint != null ? endpoint : contextEndpoint) ?? ''
 
+  // TODO: check if endpoint is blank and return an error
+
   const { data, error } = useSWR<K, FetchError>(
     props != null ? [urljoin(endpoint, uri), params] : null,
     fetcher

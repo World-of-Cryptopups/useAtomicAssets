@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@cryptopuppie/useatomicassets": "^0.1.2",
+    "@cryptopuppie/useatomicassets": "file:cryptopuppie-useatomicassets-0.1.3.tgz",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"

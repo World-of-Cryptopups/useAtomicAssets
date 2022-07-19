@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@cryptopuppie/useatomicassets': ^0.1.2
+  '@cryptopuppie/useatomicassets': file:cryptopuppie-useatomicassets-0.1.3.tgz
   eslint: 8.20.0
   eslint-config-next: 12.2.2
   next: 12.2.2
@@ -9,7 +9,7 @@ specifiers:
   react-dom: 18.2.0
 
 dependencies:
-  '@cryptopuppie/useatomicassets': 0.1.2
+  '@cryptopuppie/useatomicassets': file:cryptopuppie-useatomicassets-0.1.3.tgz
   next: 12.2.2_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -34,19 +34,6 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.9
     dev: true
-
-  /@cryptopuppie/useatomicassets/0.1.2:
-    resolution: {integrity: sha512-74G0na3uLYxeHHZyRB03bTonPw/Bmfu7ICP+A20+ieZN2IrqLZ3AKVV7J/AmUbVaooBf4Xv9vMXlbrYa2RLcJQ==}
-    engines: {node: '>=14'}
-    dependencies:
-      cross-fetch: 3.1.5
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      swr: 1.3.0_react@18.2.0
-      url-join: 5.0.0
-    transitivePeerDependencies:
-      - encoding
-    dev: false
 
   /@eslint/eslintrc/1.3.0:
     resolution: {integrity: sha512-UWW0TMTmk2d7hLcWD1/e2g5HDM/HQ3csaLSqXCfqwh4uNDuNqlaKWXmEsL4Cs41Z0KnILNvwbHAah3C2yt06kw==}
@@ -1880,3 +1867,18 @@ packages:
   /yallist/4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: true
+
+  file:cryptopuppie-useatomicassets-0.1.3.tgz:
+    resolution: {integrity: sha512-OIHpSrXG8TkYJ7j2giyCP2TlH9ZjdqYVIZQJTYw2eQx7yJ2HdjG9cWeywe9wLE+wMS3rFWsQSur7si0isOlK7Q==, tarball: file:cryptopuppie-useatomicassets-0.1.3.tgz}
+    name: '@cryptopuppie/useatomicassets'
+    version: 0.1.3
+    engines: {node: '>=14'}
+    dependencies:
+      cross-fetch: 3.1.5
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      swr: 1.3.0_react@18.2.0
+      url-join: 5.0.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false

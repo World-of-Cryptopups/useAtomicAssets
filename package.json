@@ -1,6 +1,6 @@
 {
   "name": "@cryptopuppie/useatomicassets",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React hooks for fetching data from atomicassets.",
   "main": "./dist/index.js",
   "exports": "./dist/index.js",

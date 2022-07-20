@@ -6,9 +6,22 @@ All of the hooks wraps around `useSWR` from the [swr](https://swr.vercel.app) li
 
 ## Install
 
-```sh
-npm install --save @cryptopuppie/useatomicassets
-```
+- with **npm**
+
+  ```sh
+  npm install @cryptopuppie/useatomicassets
+  ```
+
+- with **yarn**
+
+  ```sh
+  yarn add @cryptopuppie/useatomicassets
+  ```
+
+- with **pnpm**
+  ```sh
+  pnpm add @cryptopuppie/useatomicassets
+  ```
 
 ## Usage
 
@@ -20,7 +33,9 @@ import { useGetAssets } from '@cryptopuppie/useatomicassets'
 export default function App() {
   const { data } = useGetAssets(
     { owner: 'fckedupmyacc', limit: 5 },
-    'https://test.wax.api.atomicassets.io'
+    {
+      endpoint: 'https://test.wax.api.atomicassets.io'
+    }
   )
 
   return (
@@ -83,7 +98,9 @@ export default function App() {
   export default function App() {
     const { data, isError, error } = useGetAssets(
       { owner: 'fckedupmyacc', limit: 5 },
-      'https://test.wax.api.atomicassets.io'
+      {
+        endpoint: 'https://test.wax.api.atomicassets.io'
+      }
     )
 
     if (isError) {
@@ -133,7 +150,7 @@ interface CustomResponseType {}
 
 export default function App() {
   const { data } = useAtomicGetter<CustomResponseType>({
-    uri: `/atomicassets/v1/assets/{assetId}/stats`,
+    uri: `/atomicassets/v1/assets/${assetId}/stats`,
     endpoint: 'https://test.wax.api.atomicassets.io'
   })
 
@@ -143,4 +160,4 @@ export default function App() {
 
 ##
 
-**2022 | World of Cryptopups**
+**&copy; 2022 | World of Cryptopups**

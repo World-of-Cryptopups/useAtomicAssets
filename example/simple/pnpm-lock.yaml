@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@cryptopuppie/useatomicassets': ^0.1.3
+  '@cryptopuppie/useatomicassets': ^0.1.5
   '@jest/types': ^28.1.3
   '@types/react': ^18.0.15
   '@types/react-dom': ^18.0.6
@@ -11,7 +11,7 @@ specifiers:
   vite: ^3.0.0
 
 dependencies:
-  '@cryptopuppie/useatomicassets': 0.1.3
+  '@cryptopuppie/useatomicassets': 0.1.5
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -285,8 +285,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@cryptopuppie/useatomicassets/0.1.3:
-    resolution: {integrity: sha512-VcFKbYt0nyOaIobVbAV4668EXUAwiTkVk+EzgqBJr+wWfKvDtCOTWrNAhE72wnjGIVvqG/vWq7Bgo6mAfsbBgw==}
+  /@cryptopuppie/useatomicassets/0.1.5:
+    resolution: {integrity: sha512-9MyaA1WNAMG3+teHmWND4C3J/hO9+/tM1QZCQKxl282pxdQblTWGickI2fXr8b6HKlzR/8lqzha6rtFPst5wUw==}
     engines: {node: '>=14'}
     dependencies:
       cross-fetch: 3.1.5
